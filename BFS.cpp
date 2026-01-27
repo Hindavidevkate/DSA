@@ -58,31 +58,8 @@ class Graph{
 
         //This function are usedto detect if cycle is present in graph or not 
 //This is wrong logic
-        bool isCycleDFS(int src,int par,vector<bool>&vis){
-            vis[src] = true;
-            list<int> neigh = l[src];
-            for(int v: neigh){
-                if(!vis[v]){
-                    if(isCycleDFS(v,src,vis)){
-                        return true;
-                    }
-                }else if(v!=par){
-                    return true;
-                }
-            }
-            return false;
-        }
-        bool isCycle(){
-            vector<bool> vis(v,false);
-            for(int i = 0; i< v;i++){
-                if(!vis[i]){
-                    if(isCycleDFS(i,-1,vis)){
-                        return true;
-                    }
-                }
-            }
-            return false;
-        }
+    
+
 };
 int main(){
     Graph g(10);
@@ -98,7 +75,6 @@ int main(){
     g.bfs();
     cout<<"This is DFS Traversal : ";
     g.dfs();
-    cout<<"Is Cycle in Graph : ";
-    g.isCycle();
+    
     return 0;
 }

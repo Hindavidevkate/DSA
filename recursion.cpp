@@ -21,7 +21,7 @@ int binarySearch(vector<int>arr,int tar,int st,int end){
 }
 int main(){
     vector<int> arr = {1, 3 ,5,6,7};
-    int tar = 5;
+    int tar = 7;
     cout<<binarySearch(arr, tar,0,arr.size());
     return 0;
 }
